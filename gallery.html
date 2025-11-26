@@ -346,3 +346,361 @@
         radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.8), #020617);
       opacity: 0.9;
     }
+
+    .gallery-tag {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .gallery-body {
+      padding: 0.85rem 0.95rem 1rem;
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .gallery-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .gallery-meta {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .gallery-notes {
+      font-size: 0.82rem;
+      color: #e5e7eb;
+    }
+
+    .gallery-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.3rem;
+    }
+
+    .gallery-badge {
+      font-size: 0.72rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(156, 163, 175, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Callout section */
+
+    .callout {
+      background: #f9fafb;
+    }
+
+    .callout-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .callout-inner p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      background: #f9fafb;
+      padding: 1.5rem 0;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="shell nav-container">
+      <a href="index.html#top" class="logo">
+        <div class="logo-mark">MEG</div>
+        <div>Epoxy Coatings</div>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services">Services</a></li>
+          <li><a href="gallery" class="active">Gallery</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#contact">Quote</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#contact" class="nav-cta">Free Floor Quote</a>
+      <button class="nav-menu-toggle" aria-label="Toggle navigation" onclick="toggleMobileNav()">☰</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="index.html" onclick="toggleMobileNav()">Home</a></li>
+        <li><a href="services" onclick="toggleMobileNav()">Services</a></li>
+        <li><a href="gallery" onclick="toggleMobileNav()">Gallery</a></li>
+        <li><a href="index.html#pricing" onclick="toggleMobileNav()">Pricing</a></li>
+        <li><a href="index.html#contact" onclick="toggleMobileNav()">Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker">Gallery</div>
+        <h1>Real Floors, <span>Real Transformations</span>.</h1>
+        <p class="hero-sub">
+          A look at the kinds of projects MEG Epoxy Coatings installs across Central Texas—
+          from dusty, cracked concrete to bright, clean, and durable floors built for daily use.
+        </p>
+        <div class="hero-cta-row">
+          <button class="btn-primary" onclick="window.location.href='index.html#contact'">
+            Get a Free Quote
+          </button>
+          <button class="btn-outline-light" onclick="document.getElementById('gallery-grid').scrollIntoView({behavior:'smooth'})">
+            Scroll Projects
+          </button>
+        </div>
+        <div class="hero-meta">
+          (Replace these placeholders with your actual project photos as you build your portfolio.)
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <h3>Project Types</h3>
+        <div>
+          Garages, home shops, detail bays, commercial shops, showrooms, and utility spaces—
+          each with prep, repair, and coatings chosen for how the floor is actually used.
+        </div>
+        <div>
+          When you’re ready, you can swap these panels for before/after photos and short
+          descriptions so customers can picture what’s possible in their own space.
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID -->
+  <section>
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Sample Projects</div>
+        <h2 class="section-title">Before &amp; After-Style Projects</h2>
+        <p class="section-subtitle">
+          These example panels describe the kinds of transformations we focus on. As you complete jobs,
+          you can replace the placeholder panels with real photos and project details.
+        </p>
+      </div>
+
+      <div class="filters">
+        <span class="filter-pill">Garages</span>
+        <span class="filter-pill">Shops &amp; Bays</span>
+        <span class="filter-pill">Commercial</span>
+        <span class="filter-pill">Stain &amp; Seal</span>
+        <span class="filter-pill">High-Traction</span>
+      </div>
+
+      <div id="gallery-grid" class="gallery-grid">
+
+        <!-- Card 1 -->
+        <article class="gallery-card">
+          <div class="gallery-image">
+            <div class="gallery-image-inner"></div>
+            <div class="gallery-tag">Garage • Flake</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-title">Two-Car Garage • Full Flake System</div>
+            <div class="gallery-meta">Medium gray base • Full broadcast flake • Polyaspartic topcoat</div>
+            <p class="gallery-notes">
+              Previously dusty, stained concrete now has a bright, easy-to-clean flake floor that
+              stands up to daily parking, spills, and Texas heat.
+            </p>
+            <div class="gallery-badge-row">
+              <span class="gallery-badge">Residential</span>
+              <span class="gallery-badge">Hot tire resistant</span>
+              <span class="gallery-badge">Easy to clean</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="gallery-card">
+          <div class="gallery-image">
+            <div class="gallery-image-inner"></div>
+            <div class="gallery-tag">Shop • Epoxy</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-title">Home Shop • Solid Color Epoxy</div>
+            <div class="gallery-meta">High-build gray epoxy • Crack repair • Clear protective coat</div>
+            <p class="gallery-notes">
+              Cracked, uneven concrete ground smooth and repaired, then coated with a solid color epoxy
+              for a professional shop feel.
+            </p>
+            <div class="gallery-badge-row">
+              <span class="gallery-badge">Grinding &amp; repair</span>
+              <span class="gallery-badge">Solid color</span>
+              <span class="gallery-badge">Light industrial</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="gallery-card">
+          <div class="gallery-image">
+            <div class="gallery-image-inner"></div>
+            <div class="gallery-tag">Detail Bay</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-title">Detail / Wash Bay • High Build Epoxy</div>
+            <div class="gallery-meta">Chemical-resistant epoxy • Non-slip additive • Clear topcoat</div>
+            <p class="gallery-notes">
+              A working detail bay upgraded with a chemical-resistant system designed to handle soaps,
+              degreasers, and constant rinsing.
+            </p>
+            <div class="gallery-badge-row">
+              <span class="gallery-badge">Automotive</span>
+              <span class="gallery-badge">Non-slip</span>
+              <span class="gallery-badge">Chemical resistant</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="gallery-card">
+          <div class="gallery-image">
+            <div class="gallery-image-inner"></div>
+            <div class="gallery-tag">Showroom</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-title">Commercial Showroom • Metallic Epoxy</div>
+            <div class="gallery-meta">Two-tone metallic epoxy • Clear high-gloss topcoat</div>
+            <p class="gallery-notes">
+              A customer-facing showroom space with a metallic system for depth, reflection, and a
+              high-end look that still cleans up easily.
+            </p>
+            <div class="gallery-badge-row">
+              <span class="gallery-badge">Metallic</span>
+              <span class="gallery-badge">Showroom</span>
+              <span class="gallery-badge">High gloss</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="gallery-card">
+          <div class="gallery-image">
+            <div class="gallery-image-inner"></div>
+            <div class="gallery-tag">Quartz</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-title">Shop Entry &amp; Ramp • Quartz Broadcast</div>
+            <div class="gallery-meta">Quartz broadcast • Aluminum oxide • Clear protective coat</div>
+            <p class="gallery-notes">
+              High-traffic entry and ramp coated with a quartz system and non-slip additives for
+              better traction in wet or muddy conditions.
+            </p>
+            <div class="gallery-badge-row">
+              <span class="gallery-badge">High traction</span>
+              <span class="gallery-badge">Commercial</span>
+              <span class="gallery-badge">Safety focused</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="gallery-card">
+          <div class="gallery-image">
+            <div class="gallery-image-inner"></div>
+            <div class="gallery-tag">Stain &amp; Seal</div>
+          </div>
+          <div class="gallery-body">
+            <div class="gallery-title">Patio / Outdoor Slab • Stain &amp; Seal</div>
+            <div class="gallery-meta">Acid stain • Neutralization • Clear sealer</div>
+            <p class="gallery-notes">
+              A plain outdoor slab transformed with subtle, variegated coloring and a sealed surface
+              that shrugs off dust and light spills.
+            </p>
+            <div class="gallery-badge-row">
+              <span class="gallery-badge">Stain &amp; seal</span>
+              <span class="gallery-badge">Outdoor</span>
+              <span class="gallery-badge">Low maintenance</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p style="font-size:0.8rem; color:#6b7280; margin-top:0.9rem;">
+        When you’re ready, swap these panels for your actual project photos and update the descriptions.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALLOUT -->
+  <section class="callout">
+    <div class="shell">
+      <div class="callout-inner">
+        <div class="section-kicker">Ready for Your Own Before &amp; After?</div>
+        <h2 class="section-title">Let’s Add Your Floor to the Gallery</h2>
+        <p>
+          Whether it’s a garage, home shop, detail bay, or commercial space, we can help you pick a
+          system that fits how you actually use the floor—and make it look good doing it.
+        </p>
+        <div class="hero-cta-row" style="justify-content:center;">
+          <button class="btn-primary" onclick="window.location.href='index.html#contact'">
+            Request a Free Quote
+          </button>
+          <button class="btn-outline-light" style="color:#111827; border-color:#d1d5db;"
+                  onclick="window.location.href='services'">
+            View All Services
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MEG Epoxy Coatings. All rights reserved.</div>
+      <div>Durable • Chemical-Resistant • Stylish Floors</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMobileNav() {
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
