@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | MEG Epoxy Coatings</title>
+  <meta name="description" content="MEG Epoxy Coatings pricing overview for epoxy, flake, metallic, quartz, moisture vapor barrier systems, and concrete prep in Central Texas." />
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #111318;
+      --bg-light: #f5f5f7;
+      --primary: #f59e0b;
+      --primary-soft: rgba(245,158,11,0.1);
+      --text-main: #111827;
+      --text-light: #f9fafb;
+      --border-soft: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    html { scroll-behavior: smooth; }
+
+    .shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(17, 19, 24, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.12);
+    }
+
+    .nav-container {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--text-light);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.3);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      background: radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent);
+    }
+
+    .nav-menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--text-light);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav { display: none; }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .nav-cta { display: none; }
+      .nav-menu-toggle { display: block; }
+
+      .mobile-nav {
+        display: none;
+        background: #0b0c10;
+        border-top: 1px solid rgba(229, 231, 235, 0.12);
+      }
+      .mobile-nav.open { display: block; }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0.75rem 1.25rem 1rem;
+      }
+      .mobile-nav li { padding: 0.35rem 0; }
+      .mobile-nav a {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Hero */
+
+    .hero {
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      color: var(--text-light);
+      padding: 3.5rem 1.25rem 3rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
+      line-height: 1.1;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      max-width: 34rem;
+      color: #e5e7eb;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .hero-right {
+      border-radius: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at top, rgba(248, 250, 252, 0.08), transparent);
+      padding: 1.1rem 1.2rem;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .hero-right h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), #f97316);
+      color: #111827;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline-light {
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.35);
+      background: transparent;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Sections */
+
+    section { padding: 3rem 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 880px) {
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .pricing-card-main {
+      border-radius: 1.2rem;
+      padding: 1.3rem;
+      background: #030712;
+      color: var(--text-light);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    .pricing-card-main h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .price-row {
+      font-size: 1.9rem;
+      font-weight: 700;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .price-row span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #9ca3af;
+    }
+
+    .pricing-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.8rem;
+    }
+
+    .pricing-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+      display: grid;
+      gap: 0.25rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .pricing-list li::before {
+      content: "✔ ";
+      color: var(--primary);
+    }
+
+    .pricing-pill {
+      display: inline-flex;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+      margin-bottom: 0.6rem;
+    }
+
+    .pricing-side {
+      border-radius: 1.1rem;
+      padding: 1rem;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      background: #f9fafb;
+      font-size: 0.86rem;
+      color: #4b5563;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .pricing-side strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .tier-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+      padding: 1rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+      font-size: 0.88rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .tier-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #6b7280;
+    }
+
+    .tier-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .tier-price {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #111827;
+    }
+
+    .tier-price span {
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: #6b7280;
+    }
+
+    .tier-list {
+      list-style: none;
+      font-size: 0.83rem;
+      color: #4b5563;
+    }
+
+    .tier-list li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .fine-print {
+      font-size: 0.78rem;
+      color: #6b7280;
+      margin-top: 0.6rem;
+    }
+
+    .band {
+      background: #f9fafb;
+    }
+
+    /* Contact band */
+
+    .contact-band {
+      background: #030712;
+      color: var(--text-light);
+      padding: 2.6rem 1.25rem;
+    }
+
+    .contact-band-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 880px) {
+      .contact-band-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-info {
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: rgba(15,23,42,0.9);
+      padding: 1rem;
+      font-size: 0.86rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .contact-info strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      background: #f9fafb;
+      padding: 1.5rem 0;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="shell nav-container">
+      <a href="index.html#top" class="logo">
+        <div class="logo-mark">MEG</div>
+        <div>Epoxy Coatings</div>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services">Services</a></li>
+          <li><a href="gallery">Gallery</a></li>
+          <li><a href="pricing" class="active">Pricing</a></li>
+          <li><a href="index.html#contact">Quote</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#contact" class="nav-cta">Free Floor Quote</a>
+      <button class="nav-menu-toggle" aria-label="Toggle navigation" onclick="toggleMobileNav()">☰</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="index.html" onclick="toggleMobileNav()">Home</a></li>
+        <li><a href="services" onclick="toggleMobileNav()">Services</a></li>
+        <li><a href="gallery" onclick="toggleMobileNav()">Gallery</a></li>
+        <li><a href="pricing" onclick="toggleMobileNav()">Pricing</a></li>
+        <li><a href="index.html#contact" onclick="toggleMobileNav()">Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker">Pricing</div>
+        <h1>Transparent Pricing for <span>Real-World Floors</span>.</h1>
+        <p class="hero-sub">
+          Most residential flake garage systems start around <strong>$5.00 per sq ft</strong>, with
+          final pricing based on concrete condition, system type, and any repairs or moisture
+          mitigation needed.
+        </p>
+        <div class="hero-cta-row">
+          <button class="btn-primary" onclick="window.location.href='index.html#contact'">
+            Get My Custom Quote
+          </button>
+          <button class="btn-outline-light" onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})">
+            View Sample Packages
+          </button>
+        </div>
+        <div class="hero-note">
+          Every slab is a little different. We’ll walk you through why your floor costs what it costs—no surprises.
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <h3>How We Build Your Price</h3>
+        <div>
+          We look at square footage, current concrete condition, cracking or spalling, moisture,
+          and the system you’re after (flake, metallic, quartz, stain &amp; seal, etc.).
+        </div>
+        <div>
+          From there we give you clear, written pricing and explain any add-ons like heavy repair,
+          moisture vapor barriers, or upgraded topcoats.
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MAIN PRICING -->
+  <section>
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Residential Garage Pricing</div>
+        <h2 class="section-title">Full Broadcast Flake Epoxy System</h2>
+        <p class="section-subtitle">
+          This is our most popular system for two- and three-car garages and home shops.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card-main">
+          <div class="pricing-pill">Spring / Summer Special</div>
+          <h3>Full Broadcast Flake System</h3>
+          <div class="price-row">
+            $5.00
+            <span>/ sq ft • starting at</span>
+          </div>
+          <p class="pricing-note">
+            Pricing assumes sound concrete with basic prep and repair. Heavier cracking, old coatings,
+            or moisture mitigation will be additional.
+          </p>
+          <ul class="pricing-list">
+            <li>Diamond grinding of the concrete surface</li>
+            <li>Crack and minor spall repair</li>
+            <li>Pigmented epoxy base coat</li>
+            <li>Full broadcast decorative flake</li>
+            <li>Clear protective topcoat (epoxy or polyaspartic)</li>
+          </ul>
+          <button class="btn-primary" onclick="window.location.href='index.html#contact'">
+            Request a Garage Quote
+          </button>
+          <div class="fine-print">
+            Minimum charges apply for small spaces. We’ll confirm exact pricing after seeing your floor in person or in photos.
+          </div>
+        </div>
+
+        <aside class="pricing-side">
+          <strong>What Can Increase the Price?</strong>
+          <ul style="margin-left:1.1rem; margin-top:0.2rem;">
+            <li>Existing coatings, paint, or glue that must be removed</li>
+            <li>Heavy cracking, pitting, or slab movement</li>
+            <li>Moisture issues requiring a moisture vapor barrier (MVB)</li>
+            <li>Upgraded systems (metallic, quartz, high-build commercial)</li>
+            <li>Very small projects under our standard minimums</li>
+          </ul>
+          <div class="fine-print">
+            We’ll point these out during your quote and explain options so you can decide what makes sense.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERED EXAMPLES -->
+  <section class="band" id="tiers">
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Sample Packages</div>
+        <h2 class="section-title">Example Pricing Scenarios</h2>
+        <p class="section-subtitle">
+          Every job is custom, but these examples give you a ballpark for common project types.
+        </p>
+      </div>
+
+      <div class="tier-grid">
+
+        <article class="tier-card">
+          <div class="tier-label">Garage</div>
+          <div class="tier-title">Standard 2-Car Garage</div>
+          <div class="tier-price">$1,500–$2,200 <span>estimate</span></div>
+          <ul class="tier-list">
+            <li>Approx. 300–400 sq ft</li>
+            <li>Basic grinding and minor crack repair</li>
+            <li>Full broadcast flake system</li>
+            <li>Clear protective topcoat</li>
+          </ul>
+          <div class="fine-print">
+            Final price depends on exact square footage and concrete condition.
+          </div>
+        </article>
+
+        <article class="tier-card">
+          <div class="tier-label">Garage / Shop</div>
+          <div class="tier-title">3-Car Garage or Home Shop</div>
+          <div class="tier-price">$2,200–$3,500 <span>estimate</span></div>
+          <ul class="tier-list">
+            <li>Approx. 500–700 sq ft</li>
+            <li>Grinding, crack and small spall repair</li>
+            <li>Full flake or solid epoxy system</li>
+            <li>Optional upgraded topcoat</li>
+          </ul>
+          <div class="fine-print">
+            Great for larger garages, combo garage/workshop setups, or small shops.
+          </div>
+        </article>
+
+        <article class="tier-card">
+          <div class="tier-label">Commercial</div>
+          <div class="tier-title">Small Commercial / Detail Bay</div>
+          <div class="tier-price">Custom <span>by site</span></div>
+          <ul class="tier-list">
+            <li>Shops, showrooms, or detail bays</li>
+            <li>Higher build systems and more prep</li>
+            <li>Non-slip and chemical-resistant options</li>
+            <li>Often includes moisture and safety considerations</li>
+          </ul>
+          <div class="fine-print">
+            We’ll visit your space or review photos and measurements for a tailored quote.
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS / UPGRADES -->
+  <section>
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Add-Ons &amp; Upgrades</div>
+        <h2 class="section-title">What Else Might Be On Your Quote?</h2>
+        <p class="section-subtitle">
+          These items don’t apply to every floor, but when they do, we’ll show them clearly in
+          your estimate so you can see exactly what you’re paying for.
+        </p>
+      </div>
+
+      <div class="tier-grid">
+
+        <article class="tier-card">
+          <div class="tier-label">Moisture</div>
+          <div class="tier-title">Moisture Vapor Barrier (MVB)</div>
+          <p>
+            For slabs with measurable moisture issues that can cause bubbling or peeling, we may
+            recommend an MVB system under your coating.
+          </p>
+          <ul class="tier-list">
+            <li>Installed as a separate epoxy layer</li>
+            <li>Helps protect adhesion long-term</li>
+            <li>More common at ground level or older slabs</li>
+          </ul>
+        </article>
+
+        <article class="tier-card">
+          <div class="tier-label">Repair</div>
+          <div class="tier-title">Heavy Crack / Spall Repair</div>
+          <p>
+            Beyond simple hairline cracks, deeper cracks, spalling, or damaged areas may need
+            extra prep and repair materials.
+          </p>
+          <ul class="tier-list">
+            <li>Structural crack chasing and filling</li>
+            <li>Rebuilding pits and spalled areas</li>
+            <li>Leveling low or uneven spots</li>
+          </ul>
+        </article>
+
+        <article class="tier-card">
+          <div class="tier-label">System Upgrades</div>
+          <div class="tier-title">Metallic, Quartz &amp; High-Build</div>
+          <p>
+            Metallic, quartz, and certain commercial builds require more material and labor than
+            a standard flake garage system.
+          </p>
+          <ul class="tier-list">
+            <li>Metallic epoxy showroom floors</li>
+            <li>Quartz broadcast for high traction</li>
+            <li>High-build systems for demanding use</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOSITS / MINIMUMS -->
+  <section class="band">
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Deposits &amp; Minimums</div>
+        <h2 class="section-title">How Payment &amp; Scheduling Work</h2>
+        <p class="section-subtitle">
+          We try to keep our process simple and predictable so you know what to expect before we start.
+        </p>
+      </div>
+
+      <div class="tier-grid">
+
+        <article class="tier-card">
+          <div class="tier-label">Deposit</div>
+          <div class="tier-title">Booking Deposit</div>
+          <p>
+            A deposit is required to lock in your date and reserve materials for your job.
+          </p>
+          <ul class="tier-list">
+            <li>Typically 50% of the project total</li>
+            <li>Remaining balance due at completion</li>
+            <li>We'll outline this clearly on your quote</li>
+          </ul>
+        </article>
+
+        <article class="tier-card">
+          <div class="tier-label">Minimums</div>
+          <div class="tier-title">Small Job Minimums</div>
+          <p>
+            Very small projects still require travel, setup, and cleanup, so we have minimum charges
+            for small spaces.
+          </p>
+          <ul class="tier-list">
+            <li>Applies to smaller patios, entries, or small rooms</li>
+            <li>We’ll let you know if your job falls under this</li>
+          </ul>
+        </article>
+
+        <article class="tier-card">
+          <div class="tier-label">Scheduling</div>
+          <div class="tier-title">Timeline &amp; Cure Times</div>
+          <p>
+            Most residential projects are completed in 1–2 days, with specific cure times before foot
+            and vehicle traffic.
+          </p>
+          <ul class="tier-list">
+            <li>Light foot traffic typically within 24 hours</li>
+            <li>Vehicle traffic after the recommended cure period</li>
+            <li>We’ll go over cure times before we start</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT BAND -->
+  <section class="contact-band">
+    <div class="contact-band-inner">
+      <div>
+        <h2 style="font-size:1.5rem; margin-bottom:0.4rem;">Ready for a Specific Number?</h2>
+        <p style="font-size:0.95rem; color:#e5e7eb; margin-bottom:1rem;">
+          Tell us your square footage, send a few photos of the concrete, and share how you use the
+          space. We’ll put together a clear, written quote.
+        </p>
+        <div class="hero-cta-row" style="margin-bottom:0.6rem;">
+          <button class="btn-primary" onclick="window.location.href='index.html#contact'">
+            Request a Quote
+          </button>
+          <button class="btn-outline-light" onclick="window.location.href='tel:+12543398585'">
+            Call / Text (254) 339-8585
+          </button>
+        </div>
+        <div class="hero-note">
+          You can also text us pictures of your floor for a quicker ballpark number before we schedule an on-site visit.
+        </div>
+      </div>
+
+      <aside class="contact-info">
+        <div>
+          <strong>Call / Text</strong>
+          <a href="tel:+12543398585" style="color:var(--primary); text-decoration:none;">(254) 339-8585</a><br />
+          <a href="tel:+12545517259" style="color:var(--primary); text-decoration:none;">(254) 551-7259</a>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <a href="mailto:Contact@megepoxy.com" style="color:var(--primary); text-decoration:none;">
+            Contact@megepoxy.com
+          </a>
+        </div>
+        <div>
+          <strong>Service Area</strong>
+          Central Texas and surrounding areas.
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MEG Epoxy Coatings. All rights reserved.</div>
+      <div>Durable • Chemical-Resistant • Stylish Floors</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function toggleMobileNav() {
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
