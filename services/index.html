@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | MEG Epoxy Coatings</title>
+  <meta name="description" content="Explore all MEG Epoxy Coatings services: flake systems, metallic and quartz floors, polyaspartic topcoats, concrete prep and repair, staining and sealing, and non-slip additives for residential and commercial floors in Central Texas." />
+  <meta name="theme-color" content="#111318" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #111318;
+      --bg-light: #f5f5f7;
+      --primary: #f59e0b;
+      --primary-soft: rgba(245, 158, 11, 0.1);
+      --text-main: #111827;
+      --text-light: #e5e7eb;
+      --border-soft: #e5e7eb;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* Layout / Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(17, 19, 24, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.12);
+    }
+
+    .nav-container,
+    .section-inner,
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--text-light);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.15s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #f9fafb;
+    }
+
+    nav a.active {
+      color: var(--primary);
+    }
+    nav a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.3);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      background: radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      border-color: rgba(249, 250, 251, 0.6);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Mobile nav */
+
+    .nav-menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--text-light);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .nav-cta {
+        display: none;
+      }
+      .nav-menu-toggle {
+        display: block;
+      }
+      .mobile-nav {
+        display: none;
+        background: #0b0c10;
+        border-top: 1px solid rgba(229, 231, 235, 0.12);
+      }
+      .mobile-nav.open {
+        display: block;
+      }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0.75rem 1.25rem 1rem;
+      }
+      .mobile-nav li {
+        padding: 0.45rem 0;
+      }
+      .mobile-nav a {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        display: block;
+        padding: 0.4rem 0;
+      }
+      .mobile-nav a:active {
+        color: var(--primary);
+      }
+    }
+
+    /* Hero */
+
+    .hero {
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      color: var(--text-light);
+      padding: 3.4rem 1.25rem 2.8rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ca3af;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 2.7rem);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      max-width: 32rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      font-size: 0.87rem;
+      color: #e5e7eb;
+      display: grid;
+      gap: 0.3rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-list li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.3rem;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), #f97316);
+      color: #111827;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-outline {
+      padding: 0.65rem 1.1rem;
+      border: 1px solid rgba(249, 250, 251, 0.35);
+      background: transparent;
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(249, 250, 251, 0.7);
+      background: rgba(15, 23, 42, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      border-radius: 1.3rem;
+      padding: 1.25rem;
+      background: radial-gradient(circle at top, rgba(248, 250, 252, 0.08), transparent);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.86rem;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .hero-right h2 {
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #e5e7eb;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-right strong {
+      color: #fbbf24;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 3.1rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    /* Grid cards */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    @media (max-width: 960px) {
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.1rem 1.1rem 1rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+      display: grid;
+      gap: 0.4rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(148, 163, 184, 0.9);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .service-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+    }
+
+    .service-title {
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+      font-size: 1rem;
+    }
+
+    .service-text {
+      font-size: 0.87rem;
+      color: #4b5563;
+    }
+
+    .service-bullets {
+      list-style: none;
+      font-size: 0.82rem;
+      color: #4b5563;
+      display: grid;
+      gap: 0.2rem;
+      margin-top: 0.2rem;
+    }
+
+    .service-bullets li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .service-tagline {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 0.2rem;
+    }
+
+    /* Category sections */
+
+    .category {
+      background: #ffffff;
+    }
+
+    .category.alt {
+      background: var(--bg-light);
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .category-header h2 {
+      font-size: 1.4rem;
+    }
+
+    .category-header p {
+      font-size: 0.9rem;
+      color: #6b7280;
+      max-width: 30rem;
+    }
+
+    /* Spaces we serve */
+
+    .spaces-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.3rem;
+    }
+
+    @media (max-width: 720px) {
+      .spaces-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .space-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+      font-size: 0.88rem;
+      color: #4b5563;
+    }
+
+    .space-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact band */
+
+    .contact-band {
+      background: #030712;
+      color: var(--text-light);
+    }
+
+    .contact-band-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.2rem 1.25rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .contact-band-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-band h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-band p {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      max-width: 32rem;
+    }
+
+    .contact-info {
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.45rem;
+      color: #e5e7eb;
+      background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.06), #020617);
+      border-radius: 1.1rem;
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    .contact-info-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+    }
+
+    .contact-link {
+      font-weight: 600;
+    }
+
+    .contact-link a {
+      color: #fbbf24;
+    }
+
+    .contact-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      background: #f9fafb;
+      padding: 1.5rem 0;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <div class="logo-mark">MEG</div>
+        <div>Epoxy Coatings</div>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#top" class="active">Services</a></li>
+          <li><a href="/#gallery">Gallery</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#contact">Quote</a></li>
+        </ul>
+      </nav>
+      <a href="/#contact" class="nav-cta">Free Floor Quote</a>
+      <button class="nav-menu-toggle" aria-label="Toggle navigation" onclick="toggleMobileNav()">
+        ☰
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#top">Services</a></li>
+        <li><a href="/#gallery">Gallery</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/#contact">Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO / INTRO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker">Services</div>
+        <h1>Floor Systems and Concrete Prep That <span>Actually Hold Up</span>.</h1>
+        <p class="hero-sub">
+          MEG Epoxy Coatings offers full epoxy and flake systems, metallic and quartz floors,
+          concrete grinding and repair, moisture mitigation, staining and sealing, and non-slip additives
+          for residential and commercial spaces across Central Texas.
+        </p>
+        <ul class="hero-list">
+          <li>Prep-first approach with diamond grinding and crack repair</li>
+          <li>Industrial-grade epoxies, polyaspartics, and sealers</li>
+          <li>Systems tailored to garages, shops, showrooms, and detail bays</li>
+        </ul>
+        <div class="hero-cta-row">
+          <button class="btn-primary" onclick="window.location.href='/#contact'">
+            Get a Free Floor Quote
+          </button>
+          <button class="btn-outline" onclick="document.getElementById('systems').scrollIntoView({ behavior: 'smooth' })">
+            View All Systems
+          </button>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-pill">
+          <span>Central Texas</span>
+          • Garages • Shops • Showrooms
+        </div>
+        <h2>One Contractor, Complete Floor Package</h2>
+        <p>
+          From grinding and crack repair to the last topcoat, we handle the entire process so you
+          don’t have to juggle multiple trades or guess which product goes where.
+        </p>
+        <p>
+          <strong>Epoxy, flake, polyaspartic, metallic, quartz, stain, and sealers</strong>—matched to your
+          space, traffic level, and budget.
+        </p>
+        <p style="font-size:0.8rem; color:#9ca3af;">
+          Not sure what you need? Tell us how you use the space and we’ll recommend the right system.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FLOOR SYSTEMS -->
+  <section id="systems" class="category">
+    <div class="section-inner">
+      <div class="category-header">
+        <div>
+          <div class="section-kicker">Floor Systems</div>
+          <h2 class="section-title" style="text-align:left;">Epoxy, Flake, Metallic &amp; Quartz Systems</h2>
+        </div>
+        <p>
+          High-performance, resin-based systems designed to handle hot tires, chemicals, foot traffic,
+          and equipment—while still looking clean and professional.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="service-card">
+          <div class="service-label">Flake Systems</div>
+          <h3 class="service-title">Full Broadcast Flake Epoxy</h3>
+          <p class="service-text">
+            Our most popular system for garages, home shops, and detail bays. Epoxy base, full
+            flake broadcast, and a durable clear topcoat.
+          </p>
+          <ul class="service-bullets">
+            <li>Helps hide dirt, dust, and wear</li>
+            <li>Great traction and light reflection</li>
+            <li>Wide range of flake color blends</li>
+          </ul>
+          <div class="service-tagline">The go-to choice for clean, bright garages.</div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Solid Color</div>
+          <h3 class="service-title">Pigmented Epoxy Floors</h3>
+          <p class="service-text">
+            Solid color epoxy systems for a clean, uniform look in garages, workspaces,
+            and commercial areas where a simple, professional finish is key.
+          </p>
+          <ul class="service-bullets">
+            <li>Easy to clean and maintain</li>
+            <li>Great for shops, warehouses, and utility spaces</li>
+            <li>Color options to match your space or brand</li>
+          </ul>
+          <div class="service-tagline">Minimal, professional, and functional.</div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Metallic</div>
+          <h3 class="service-title">Metallic Epoxy Floors</h3>
+          <p class="service-text">
+            High-end, showroom-style finishes using metallic pigments for a deep, 3D look.
+            Ideal for feature areas, showrooms, and custom spaces.
+          </p>
+          <ul class="service-bullets">
+            <li>Unique, one-of-a-kind patterns</li>
+            <li>Premium feel for offices, lobbies, and showrooms</li>
+            <li>Compatible with clear protective topcoats</li>
+          </ul>
+          <div class="service-tagline">Turn your floor into a centerpiece.</div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Quartz</div>
+          <h3 class="service-title">Quartz Broadcast Systems</h3>
+          <p class="service-text">
+            Broadcast quartz systems for extra traction, durability, and chemical resistance in
+            wet or high-demand environments.
+          </p>
+          <ul class="service-bullets">
+            <li>Excellent slip resistance</li>
+            <li>Great for ramps, wash bays, and busy work zones</li>
+            <li>Color blends available for a professional look</li>
+          </ul>
+          <div class="service-tagline">Built for demanding, high-traffic areas.</div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-label">Topcoats</div>
+          <h3 class="service-title">Polyaspartic Topcoat Systems</h3>
+          <p class="service-text">
+            UV-stable, fast-curing polyaspartic topcoats installed over epoxy, flake, or
+            quartz systems for extra durability and quick turnaround.
+          </p>
+          <ul class="service-bullets">
+            <li>Faster return-to-service than standard epoxies</li>
+            <li>Improved scratch and chemical resistance</li>
+            <li>Excellent UV stability for sun-exposed areas</li>
+          </ul>
+          <div class="service-tagline">Finish your floor strong and fast.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREP & REPAIR -->
+  <section id="prep" class="category alt">
+    <div class="section-inner">
+      <div class="category-header">
+        <div>
+          <div class="section-kicker">Prep &amp; Repair</div>
+          <h2 class="section-title" style="text-align:left;">Concrete Grinding, Crack Repa
