@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | MEG Epoxy Coatings</title>
+  <meta name="description" content="View sample epoxy, flake, metallic, and quartz floor projects installed by MEG Epoxy Coatings for garages, shops, and commercial spaces in Central Texas." />
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #111318;
+      --bg-light: #f5f5f7;
+      --primary: #f59e0b;
+      --primary-soft: rgba(245,158,11,0.1);
+      --text-main: #111827;
+      --text-light: #e5e7eb;
+      --border-soft: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    html { scroll-behavior: smooth; }
+
+    /* Layout shells */
+    .shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(17, 19, 24, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.12);
+    }
+
+    .nav-container {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--text-light);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.3);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      background: radial-gradient(circle at top left, rgba(245, 158, 11, 0.18), transparent);
+    }
+
+    /* Mobile nav */
+    .nav-menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--text-light);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav { display: none; }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .nav-cta { display: none; }
+      .nav-menu-toggle { display: block; }
+
+      .mobile-nav {
+        display: none;
+        background: #0b0c10;
+        border-top: 1px solid rgba(229, 231, 235, 0.12);
+      }
+      .mobile-nav.open { display: block; }
+      .mobile-nav ul {
+        list-style: none;
+        padding: 0.75rem 1.25rem 1rem;
+      }
+      .mobile-nav li { padding: 0.35rem 0; }
+      .mobile-nav a {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Hero */
+
+    .hero {
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      color: var(--text-light);
+      padding: 3.5rem 1.25rem 3rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
+      line-height: 1.1;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      max-width: 34rem;
+      color: #e5e7eb;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-meta {
+      font-size: 0.82rem;
+      color: #9ca3af;
+    }
+
+    .hero-right {
+      border-radius: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at top, rgba(248, 250, 252, 0.08), transparent);
+      padding: 1.1rem 1.2rem;
+      font-size: 0.86rem;
+      color: #e5e7eb;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .hero-right h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--primary), #f97316);
+      color: #111827;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline-light {
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.35);
+      background: transparent;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Sections */
+
+    section { padding: 3rem 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    /* Gallery */
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 0.82rem;
+    }
+
+    .filter-pill {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      cursor: default;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .gallery-card {
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      overflow: hidden;
+      background: #020617;
+      color: var(--text-light);
+      display: grid;
+      grid-template-rows: 150px auto;
+    }
+
+    .gallery-image {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at top left, #4b5563, #020617);
+    }
+
+    .gallery-image-inner {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(135deg, rgba(245, 158, 11, 0.3), transparent),
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.8), #020617);
+      opacity: 0.9;
+    }
