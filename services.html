@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | MEG Epoxy Coatings</title>
+  <meta name="description" content="Browse all MEG Epoxy Coatings services including flake epoxy systems, metallic floors, quartz broadcast, polyaspartic topcoats, concrete prep and repair, staining, sealing, and safety additives." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #111318;
+      --bg-light: #f5f5f7;
+      --primary: #f59e0b;
+      --primary-soft: rgba(245,158,11,0.1);
+      --text-main: #111827;
+      --text-light: #e5e7eb;
+      --border-soft: #e5e7eb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: white;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(17,19,24,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 10;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-light);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .logo-mark {
+      height: 26px;
+      width: 26px;
+      border-radius: 8px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.4rem;
+      color: var(--text-light);
+      list-style: none;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover::after, nav a.active::after {
+      width: 100%;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      background: var(--primary);
+      left: 0;
+      bottom: 0;
+      width: 0;
+      transition: .25s;
+    }
+
+    .nav-cta {
+      color: var(--text-light);
+      padding: .45rem .9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      font-size: .85rem;
+    }
+
+    .nav-menu-toggle { display: none; }
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      padding: 4rem 1.25rem 3rem;
+      color: var(--text-light);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.15;
+      margin-bottom: .8rem;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-sub {
+      font-size: .95rem;
+      max-width: 30rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-list li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      padding: .75rem 1.25rem;
+      background: linear-gradient(135deg, var(--primary), #f97316);
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .btn-outline {
+      padding: .75rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.5);
+      color: var(--text-light);
+      border-radius: 999px;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 600;
+      margin-left: .5rem;
+    }
+
+    .hero-right {
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 1.2rem;
+      background: rgba(255,255,255,0.05);
+      padding: 1rem 1.2rem;
+      font-size: .9rem;
+    }
+
+    /* SECTIONS */
+    section { padding: 3rem 1.25rem; }
+    .section-inner { max-width: 1100px; margin: auto; }
+
+    .section-header { text-align: center; margin-bottom: 2rem; }
+    .section-title { font-size: 1.7rem; margin-bottom: .4rem; }
+    .section-subtitle { max-width: 32rem; margin: auto; color: #6b7280; }
+
+    .card-grid {
+      display: grid;
+      gap: 1.3rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.1rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 4px 15px rgba(15,23,42,.06);
+    }
+
+    .service-label {
+      font-size: .75rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .service-title {
+      font-weight: 600;
+      margin: .25rem 0;
+      font-size: 1.1rem;
+    }
+
+    .service-text { font-size: .9rem; color: #4b5563; }
+
+    .service-bullets {
+      list-style: none;
+      font-size: .85rem;
+      margin-top: .35rem;
+    }
+
+    .service-bullets li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .service-tagline {
+      margin-top: .4rem;
+      font-size: .82rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* CONTACT BAND */
+    .contact-band {
+      background: #030712;
+      color: var(--text-light);
+      padding: 2.5rem 1.25rem;
+    }
+
+    .contact-band-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-info {
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 1rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.05);
+      display: grid;
+      gap: .6rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.5rem 1.25rem;
+      background: #f9fafb;
+      color: #6b7280;
+      font-size: .8rem;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">MEG</div>
+        <div>Epoxy Coatings</div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="services.html">Services</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#contact">Quote</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html#contact" class="nav-cta">Free Quote</a>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Professional Flooring Systems <span>Built to Last</span>.</h1>
+        <p class="hero-sub">
+          From epoxy and flake to metallic, quartz, staining, sealing, and expert concrete prep—MEG Epoxy Coatings delivers durable, beautiful floors for garages, shops, detail bays, and commercial spaces.
+        </p>
+
+        <ul class="hero-list">
+          <li>Industrial-grade epoxy & polyaspartic systems</li>
+          <li>Diamond grinding & concrete repair</li>
+          <li>Stain, seal, and safety additive options</li>
+        </ul>
+
+        <button class="btn-primary" onclick="window.location='index.html#contact'">Get a Free Quote</button>
+        <button class="btn-outline" onclick="document.getElementById('systems').scrollIntoView()">View All Services</button>
+      </div>
+
+      <div class="hero-right">
+        <strong>Why MEG?</strong><br>
+        We use high-strength materials designed for real traffic—hot tires, chemicals, tools, moisture, and more. Every job begins with proper prep so your coating bonds correctly and lasts years longer.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FLOOR SYSTEMS -->
+  <section id="systems">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Flooring Systems</h2>
+        <p class="section-subtitle">High-performance coatings for garages, shops, showrooms, and work environments.</p>
+      </div>
+
+      <div class="card-grid">
+
+        <!-- FLAKE -->
+        <div class="service-card">
+          <div class="service-label">Flake System</div>
+          <h3 class="service-title">Full Broadcast Flake Epoxy</h3>
+          <p class="service-text">A durable, attractive floor with full flake coverage for traction, color, and durability.</p>
+          <ul class="service-bullets">
+            <li>Hides dirt and wear</li>
+            <li>High traction and durability</li>
+            <li>Wide color variety</li>
+          </ul>
+          <div class="service-tagline">Most popular for garages & shops.</div>
+        </div>
+
+        <!-- SOLID EPOXY -->
+        <div class="service-card">
+          <div class="service-label">Solid Color</div>
+          <h3 class="service-title">Pigmented Epoxy Floors</h3>
+          <p class="service-text">Clean, uniform color flooring ideal for workshops, utility areas, and commercial spaces.</p>
+          <ul class="service-bullets">
+            <li>Easy to maintain</li>
+            <li>Professional appearance</li>
+            <li>Multiple color options</li>
+          </ul>
+          <div class="service-tagline">Simple, clean, durable.</div>
+        </div>
+
+        <!-- METALLIC -->
+        <div class="service-card">
+          <div class="service-label">Metallic</div>
+          <h3 class="service-title">Metallic Epoxy Floors</h3>
+          <p class="service-text">Luxury, high-end floors with 3D swirling metallic effects.</p>
+          <ul class="service-bullets">
+            <li>Showroom-quality appearance</li>
+            <li>Unique patterns</li>
+            <li>Beautiful depth and shine</li>
+          </ul>
+          <div class="service-tagline">Perfect for feature spaces.</div>
+        </div>
+
+        <!-- QUARTZ -->
+        <div class="service-card">
+          <div class="service-label">Quartz</div>
+          <h3 class="service-title">Quartz Broadcast Floors</h3>
+          <p class="service-text">Textured and extremely durable flooring for high-traffic or wet areas.</p>
+          <ul class="service-bullets">
+            <li>Superior traction</li>
+            <li>Chemical resistant</li>
+            <li>Commercial-grade strength</li>
+          </ul>
+          <div class="service-tagline">Built for demanding environments.</div>
+        </div>
+
+        <!-- POLYASPARTIC -->
+        <div class="service-card">
+          <div class="service-label">Topcoat</div>
+          <h3 class="service-title">Polyaspartic Topcoat Systems</h3>
+          <p class="service-text">Fast-curing, UV-stable protective coatings applied over flake, epoxy, or quartz floors.</p>
+          <ul class="service-bullets">
+            <li>UV stable</li>
+            <li>Fast return-to-service</li>
+            <li>High scratch/chemical resistance</li>
+          </ul>
+          <div class="service-tagline">Strong topcoat for long life.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PREP & REPAIR -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Prep & Repair Services</h2>
+        <p class="section-subtitle">We don’t coat over problems—we fix them first.</p>
+      </div>
+
+      <div class="card-grid">
+
+        <!-- GRINDING -->
+        <div class="service-card">
+          <div class="service-label">Prep</div>
+          <h3 class="service-title">Diamond Grinding</h3>
+          <p class="service-text">Mechanical surface prep that opens concrete pores and removes weak layers.</p>
+          <ul class="service-bullets">
+            <li>High-bond grinding profile</li>
+            <li>Coating/glue/paint removal</li>
+            <li>Dust-controlled equipment</li>
+          </ul>
+        </div>
+
+        <!-- REPAIR -->
+        <div class="service-card">
+          <div class="service-label">Repair</div>
+          <h3 class="service-title">Crack & Spall Repair</h3>
+          <p class="service-text">We chase and fill cracks, repair small pits, and ensure a smooth base.</p>
+          <ul class="service-bullets">
+            <li>Structural crack repair</li>
+            <li>Pit/spall patching</li>
+            <li>Stronger final finish</li>
+          </ul>
+        </div>
+
+        <!-- MVB -->
+        <div class="service-card">
+          <div class="service-label">Moisture</div>
+          <h3 class="service-title">Moisture Vapor Barrier (MVB)</h3>
+          <p class="service-text">For slabs with moisture issues that can cause peeling or delamination.</p>
+          <ul class="service-bullets">
+            <li>Moisture readings when needed</li>
+            <li>Industrial MVB epoxy</li>
+            <li>Protects long-term adhesion</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STAINING & SEALING -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Concrete Stain & Seal</h2>
+        <p class="section-subtitle">Enhance concrete without installing a full epoxy system.</p>
+      </div>
+
+      <div class="card-grid">
+
+        <!-- ACID STAIN -->
+        <div class="service-card">
+          <div class="service-label">Stain</div>
+          <h3 class="service-title">Acid Stain Systems</h3>
+          <p class="service-text">Rich, natural stone-style concrete coloring.</p>
+          <ul class="service-bullets">
+            <li>Multi-step staining</li>
+            <li>Neutralization & cleanup</li>
+            <li>Gloss/matte sealer options</li>
+          </ul>
+        </div>
+
+        <!-- CLEAR SEAL -->
+        <div class="service-card">
+          <div class="service-label">Sealer</div>
+          <h3 class="service-title">Clear Concrete Sealing</h3>
+          <p class="service-text">Dust control, stain resistance, and easier cleaning without changing the look too much.</p>
+          <ul class="service-bullets">
+            <li>Gloss or matte finish</li>
+            <li>Slip-resistant additives optional</li>
+            <li>Good for shops & patios</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SAFETY & CUSTOM -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title">Safety & Custom Options</h2>
+        <p class="section-subtitle">Improve traction or personalize your space.</p>
+      </div>
+
+      <div class="card-grid">
+
+        <!-- NON-SLIP -->
+        <div class="service-card">
+          <div class="service-label">Non-Slip</div>
+          <h3 class="service-title">Aluminum Oxide Traction Additives</h3>
+          <p class="service-text">Broadcast additives for improved grip in wet or high-traffic zones.</p>
+          <ul class="service-bullets">
+            <li>Fine or aggressive textures</li>
+            <li>Great for ramps, entries, & shops</li>
+            <li>Works in epoxy & polyaspartic</li>
+          </ul>
+        </div>
+
+        <!-- CUSTOM FLAKE -->
+        <div class="service-card">
+          <div class="service-label">Customization</div>
+          <h3 class="service-title">Custom Flake Colors</h3>
+          <p class="service-text">Match brand colors, garage themes, or personal style.</p>
+          <ul class="service-bullets">
+            <li>Custom blends available</li>
+            <li>Hide dirt effectively</li>
+            <li>Brighten dark spaces</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT BAND -->
+  <section class="contact-band">
+    <div class="contact-band-inner">
+
+      <div>
+        <h2>Ready to Start Your Floor?</h2>
+        <p>
+          Tell us about your project, send photos, and get a quick estimate for your garage, shop, or commercial space.
+        </p>
+        <button class="btn-primary" onclick="window.location='index.html#contact'">Request a Quote</button>
+        <button class="btn-outline" onclick="window.location='tel:+12543398585'">Call / Text</button>
+      </div>
+
+      <div class="contact-info">
+        <div><strong>Call / Text:</strong> <br>
+          <a href="tel:+12543398585" style="color:var(--primary)"> (254) 339-8585</a><br>
+          <a href="tel:+12545517259" style="color:var(--primary)"> (254) 551-7259</a>
+        </div>
+
+        <div><strong>Email:</strong><br>
+          <a href="mailto:Contact@megepoxy.com" style="color:var(--primary)">Contact@megepoxy.com</a>
+        </div>
+
+        <div><strong>Service Area:</strong><br>
+          Central Texas & surrounding regions.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MEG Epoxy Coatings</div>
+      <div>Durable • Chemical-Resistant • Stylish Floors</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
